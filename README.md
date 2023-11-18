@@ -75,3 +75,6 @@
 9. **管理者機能:**
     - 登録ユーザーの検索、一覧、詳細、編集
     - コメントの検索、一覧、詳細、編集、削除
+
+## 画面遷移図
+  [画面遷移図](https://www.figma.com/file/RrSWZOgKGv41gUyNg1ts0N/%E3%81%94%E3%81%97%E3%81%A1%E3%81%A7?type=design&node-id=0%3A1&mode=design&t=YeMkQ94JBH18MEzH-1)
