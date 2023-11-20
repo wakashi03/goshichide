@@ -80,4 +80,4 @@
   [画面遷移図](https://www.figma.com/file/RrSWZOgKGv41gUyNg1ts0N/%E3%81%94%E3%81%97%E3%81%A1%E3%81%A7?type=design&node-id=0%3A1&mode=design&t=YeMkQ94JBH18MEzH-1)
 
 ## ER図
-   [![Image from Gyazo](https://i.gyazo.com/bdfa9c8d40ab1d6fa6f9008f5a6cdf3f.png)](https://gyazo.com/bdfa9c8d40ab1d6fa6f9008f5a6cdf3f)
+   [![Image from Gyazo](https://i.gyazo.com/86cf9e59e212145405894df9dd149a44.png)](https://gyazo.com/86cf9e59e212145405894df9dd149a44)
