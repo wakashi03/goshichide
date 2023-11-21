@@ -78,3 +78,6 @@
 
 ## 画面遷移図
   [画面遷移図](https://www.figma.com/file/RrSWZOgKGv41gUyNg1ts0N/%E3%81%94%E3%81%97%E3%81%A1%E3%81%A7?type=design&node-id=0%3A1&mode=design&t=YeMkQ94JBH18MEzH-1)
+
+## ER図
+   [![Image from Gyazo](https://i.gyazo.com/e9b20191de2c093369aeef35b762dc69.png)](https://gyazo.com/e9b20191de2c093369aeef35b762dc69)
