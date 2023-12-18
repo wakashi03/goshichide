@@ -1,21 +1,12 @@
 <div class="navbar bg-base-100">
   <div class="flex-1">
-    <a class="btn btn-ghost text-xl">daisyUI</a>
+    <%= link_to 'ごしちで', root_path, class: 'btn btn-ghost text-xl link' %>
   </div>
   <div class="flex-none">
-    <ul class="menu menu-horizontal px-1">
-      <li><a>Link</a></li>
-      <li>
-        <details>
-          <summary>
-            Parent
-          </summary>
-          <ul class="p-2 bg-base-100 rounded-t-none">
-            <li><a>Link 1</a></li>
-            <li><a>Link 2</a></li>
-          </ul>
-        </details>
-      </li>
+    <ul class="menu menu-horizontal p-0">
+      <%= link_to '投稿', '#', class: 'menu-item link mr-4' %>
+      <%= link_to '投稿一覧', '#', class: 'menu-item link mr-4' %>
+      <%= link_to 'ランキング', '#', class: 'menu-item link' %>
     </ul>
   </div>
 </div>
