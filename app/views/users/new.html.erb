@@ -4,41 +4,41 @@
       <h1 class="text-5xl font-bold">Sign up now!</h1>
     </div>
     <div class="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-      <form class="card-body">
+      <%= form_with(model: @user, local: true, html: {class: 'card-body'}) do |f| %>
         <div class="form-control">
-          <label class="label">
+          <%= f.label :last_name, class: 'label' do %>
             <span class="label-text">Last name</span>
-          </label>
-          <input type="text" placeholder="Last name" class="input input-bordered" required />
+          <% end %>
+          <%= f.text_field :last_name, placeholder: "Last name", class: "input input-bordered", required: true %>
         </div>
         <div class="form-control">
-          <label class="label">
+          <%= f.label :first_name, class: 'label' do %>
             <span class="label-text">First name</span>
-          </label>
-          <input type="text" placeholder="First name" class="input input-bordered" required />
+          <% end %>
+          <%= f.text_field :first_name, placeholder: "First name", class: "input input-bordered", required: true %>
         </div>
         <div class="form-control">
-          <label class="label">
+          <%= f.label :email, class: 'label' do %>
             <span class="label-text">Email</span>
-          </label>
-          <input type="email" placeholder="email" class="input input-bordered" required />
+          <% end %>
+          <%= f.email_field :email, placeholder: "Email", class: "input input-bordered", required: true %>
         </div>
         <div class="form-control">
-          <label class="label">
+          <%= f.label :password, class: 'label' do %>
             <span class="label-text">Password</span>
-          </label>
-          <input type="password" placeholder="password" class="input input-bordered" required />
+          <% end %>
+          <%= f.password_field :password, placeholder: "Password", class: "input input-bordered", required: true %>
         </div>
         <div class="form-control">
-          <label class="label">
+          <%= f.label :password_confirmation, class: 'label' do %>
             <span class="label-text">Confirm Password</span>
-          </label>
-          <input type="password" placeholder="Confirm password" class="input input-bordered" required />
+          <% end %>
+          <%= f.password_field :password_confirmation, placeholder: "Confirm password", class: "input input-bordered", required: true %>
         </div>
         <div class="form-control mt-6">
-          <button class="btn btn-primary">Sign up</button>
+          <%= f.submit "Sign up", class: "btn btn-primary" %>
         </div>
-      </form>
+      <% end %>
     </div>
   </div>
 </div>

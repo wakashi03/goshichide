@@ -4,26 +4,26 @@
       <h1 class="text-5xl font-bold">Login now!</h1>
     </div>
     <div class="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-      <form class="card-body">
+      <%= form_with(url: login_path, local: true, html: { class: "card-body" }) do |f| %>
         <div class="form-control">
-          <label class="label">
+          <%= f.label :email, class: 'label' do %>
             <span class="label-text">Email</span>
-          </label>
-          <input type="email" placeholder="email" class="input input-bordered" required />
+          <% end %>
+          <%= f.email_field :email, placeholder: "email", class: "input input-bordered", required: true %>
         </div>
         <div class="form-control">
-          <label class="label">
+          <%= f.label :password, class: 'label' do %>
             <span class="label-text">Password</span>
-          </label>
-          <input type="password" placeholder="password" class="input input-bordered" required />
+          <% end %>
+          <%= f.password_field :password, placeholder: "password", class: "input input-bordered", required: true %>
           <label class="label">
             <a href="#" class="label-text-alt link link-hover">Forgot password?</a>
           </label>
         </div>
         <div class="form-control mt-6">
-          <button class="btn btn-primary">Login</button>
+          <%= f.submit "Login", class: "btn btn-primary" %>
         </div>
-      </form>
+      <% end %>
     </div>
   </div>
 </div>
