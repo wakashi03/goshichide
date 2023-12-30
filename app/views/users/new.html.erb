@@ -6,12 +6,8 @@
     <div class="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
       <%= form_with(model: @user, local: true, html: {class: 'card-body'}) do |f| %>
         <div class="form-control">
-          <%= f.label :last_name %>
-          <%= f.text_field :last_name, class: "input input-bordered", required: true %>
-        </div>
-        <div class="form-control">
-          <%= f.label :first_name %>
-          <%= f.text_field :first_name, class: "input input-bordered", required: true %>
+          <%= f.label :name %>
+          <%= f.text_field :name, class: "input input-bordered", required: true %>
         </div>
         <div class="form-control">
           <%= f.label :email %>
