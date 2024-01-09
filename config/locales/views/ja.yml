@@ -20,9 +20,10 @@ ja:
       fail: 'ログインに失敗しました'
     destroy:
       success: 'ログアウトしました'
-  boards:
+  senryus:
     index:
       title: '川柳一覧'
+      no_result: '川柳がありません。'
     new:
       title: '川柳作成'
     bookmarks:
