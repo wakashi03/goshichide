@@ -3,6 +3,8 @@ ja:
     login: 'ログイン'
     register: '登録'
     logout: 'ログアウト'
+    message:
+      require_login: 'ログインしてください'
   users:
     new:
       title: 'ユーザー登録'
@@ -20,9 +22,10 @@ ja:
       fail: 'ログインに失敗しました'
     destroy:
       success: 'ログアウトしました'
-  boards:
+  senryus:
     index:
       title: '川柳一覧'
+      no_result: '川柳がありません。'
     new:
       title: '川柳作成'
     bookmarks:
