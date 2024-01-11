@@ -6,7 +6,7 @@ class SenryusController < ApplicationController
   end
 
   def new
-    @senryus = Senryu.new
+    @senryu = Senryu.new
   end
 
   def create
