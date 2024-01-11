@@ -6,6 +6,7 @@ AllCops:
   DisplayCopNames: true
   DisplayStyleGuide: true
   StyleGuideBaseURL: https://github.com/fortissimo1997/ruby-style-guide/blob/japanese/README.ja.md
+  SuggestExtensions: false
   Exclude:
     - 'db/migrate/*'
     - 'node_modules/**/*'
@@ -27,4 +28,6 @@ Style/Documentation:
 Naming/PredicateName:
   Enabled: false
 Style/FrozenStringLiteralComment:
+  Enabled: false
+Metrics/AbcSize:
   Enabled: false

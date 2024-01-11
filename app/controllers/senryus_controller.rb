@@ -2,7 +2,11 @@ class SenryusController < ApplicationController
   skip_before_action :require_login, only: %i[index]
 
   def index
-    @senryus = Senryu.all.includes(:user).order(created_at: :desc)
+    @senryus = Senryu.includes(:user).order(created_at: :desc)
+  end
+
+  def show
+    @senryu = Senryu.find(params[:id])
   end
 
   def new
@@ -17,10 +21,6 @@ class SenryusController < ApplicationController
       flash.now['danger'] = t('defaults.message.not_created', item: Senryu.model_name.human)
       render :new, status: :unprocessable_entity
     end
-  end
-
-  def show
-    @senryu = Senryu.find(params[:id])
   end
 
   private
