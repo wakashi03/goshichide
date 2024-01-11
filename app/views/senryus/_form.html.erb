@@ -1,0 +1,21 @@
+<div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+      <%= form_with model: senryu, local: true, html: {class: 'card-body'} do |f| %> <!-- card-bodyクラスを追加 -->
+        <div class="form-control">
+          <%= f.label :kamigo %>
+          <%= f.text_field :kamigo, class: "input input-bordered" %>
+        </div>
+        <div class="form-control">
+          <%= f.label :nakashichi %>
+          <%= f.text_field :nakashichi, class: "input input-bordered" %>
+        </div>
+        <div class="form-control">
+          <%= f.label :shimogo %>
+          <%= f.text_field :shimogo, class: "input input-bordered" %>
+        </div>
+        <div class="form-control mt-6">
+          <%= f.submit (t 'defaults.create'), class: "btn btn-primary" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
