@@ -2,6 +2,7 @@ ja:
   activerecord:
     models:
       user: 'ユーザー'
+      senryu: '川柳'
     attributes:
       user:
         email: 'メールアドレス'
