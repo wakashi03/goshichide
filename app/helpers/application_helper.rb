@@ -1,4 +1,10 @@
 module ApplicationHelper
+  def page_title(page_title = '')
+    base_title = 'GOSHICHIDE'
+
+    page_title.empty? ? base_title : "#{page_title} | #{base_title}"
+  end
+
   def flash_class(level)
     case level.to_sym
     when :success then 'alert alert-success'
