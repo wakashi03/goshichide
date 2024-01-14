@@ -31,6 +31,8 @@ ja:
       no_result: '川柳がありません。'
     new:
       title: '川柳作成'
+    show:
+      title: '川柳詳細'
     bookmarks:
       title: 'ブックマーク一覧'
   profiles:
