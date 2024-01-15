@@ -11,5 +11,5 @@
   <p class="text-right text-sm text-gray-500 mt-4">
     <%= senryu.user.name %>
   </p>
-  <%= render 'crud_menus', senryu: senryu %>
+  <%= render 'crud_menus', senryu: senryu if current_user.own?(senryu) %>
 </div>
