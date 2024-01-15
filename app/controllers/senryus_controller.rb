@@ -1,5 +1,6 @@
 class SenryusController < ApplicationController
   skip_before_action :require_login, only: %i[index]
+  before_action :set_senryu, only: [:edit, :update, :destroy]
 
   def index
     @senryus = Senryu.includes(:user).order(created_at: :desc)
@@ -25,9 +26,29 @@ class SenryusController < ApplicationController
     end
   end
 
+  def edit; end
+
+  def update
+    if @senryu.update(senryu_params)
+      redirect_to @senryu, success: t('defaults.message.updated', item: senryu.model_name.human)
+    else
+      flash.now['danger'] = t('defaults.message.not_updated', item: senryu.model_name.human)
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
+  def destroy
+    @senryu.destroy!
+    redirect_to senryus_path, success: t('defaults.message.deleted', item: senryu.model_name.human), status: :see_other
+  end
+
   private
 
   def senryu_params
     params.require(:senryu).permit(:kamigo, :nakashichi, :shimogo)
+  end
+
+  def set_senryu
+    @senryu = current_user.senryus.find(params[:id])
   end
 end
