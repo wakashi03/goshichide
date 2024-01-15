@@ -1,6 +1,6 @@
 class SenryusController < ApplicationController
   skip_before_action :require_login, only: %i[index]
-  before_action :set_senryu, only: [:edit, :update, :destroy]
+  before_action :set_senryu, only: %i[edit update destroy]
 
   def index
     @senryus = Senryu.includes(:user).order(created_at: :desc)
@@ -16,6 +16,8 @@ class SenryusController < ApplicationController
     @senryu = Senryu.new
   end
 
+  def edit; end
+
   def create
     @senryu = current_user.senryus.build(senryu_params)
     if @senryu.save
@@ -25,8 +27,6 @@ class SenryusController < ApplicationController
       render :new, status: :unprocessable_entity
     end
   end
-
-  def edit; end
 
   def update
     if @senryu.update(senryu_params)
