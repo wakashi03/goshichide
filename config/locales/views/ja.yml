@@ -3,11 +3,16 @@ ja:
     login: 'ログイン'
     register: '登録'
     logout: 'ログアウト'
-    create: '投稿する'
+    post: '投稿'
+    edit: '更新'
     message:
       require_login: 'ログインしてください'
       created: "%{item}を作成しました"
       not_created: "%{item}を作成できませんでした"
+      updated: "%{item}を更新しました"
+      not_updated: "%{item}を更新できませんでした"
+      deleted: "%{item}を削除しました"
+      delete_confirm: '削除しますか？'
   users:
     new:
       title: 'ユーザー登録'
@@ -33,6 +38,8 @@ ja:
       title: '川柳作成'
     show:
       title: '川柳詳細'
+    edit:
+      title: '川柳編集'
     bookmarks:
       title: 'ブックマーク一覧'
   profiles:

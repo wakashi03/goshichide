@@ -7,7 +7,7 @@
         <div class="card-body p-6">
           <div class='flex flex-wrap'>
             <div class='w-full md:w-9/12'>
-              <%= render 'crud_menus', senryu: @senryu %>
+              <%= render 'crud_menus', senryu: @senryu if current_user.own?(@senryu) %>
               <%= @senryu.kamigo %>
               <%= @senryu.nakashichi %>
               <%= @senryu.shimogo %>

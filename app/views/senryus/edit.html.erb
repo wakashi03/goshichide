@@ -1,0 +1,9 @@
+<% content_for(:title, t('.title')) %>
+<div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+  <div class="flex flex-wrap justify-center">
+    <div class="w-full lg:w-2/3 px-4">
+      <h1 class="text-xl font-bold leading-tight text-gray-900"><%= t('.title') %></h1>
+      <%= render 'form', { senryu: @senryu } %>
+    </div>
+  </div>
+</div>
