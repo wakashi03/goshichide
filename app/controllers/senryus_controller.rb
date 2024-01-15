@@ -30,16 +30,16 @@ class SenryusController < ApplicationController
 
   def update
     if @senryu.update(senryu_params)
-      redirect_to @senryu, success: t('defaults.message.updated', item: senryu.model_name.human)
+      redirect_to @senryu, success: t('defaults.message.updated', item: Senryu.model_name.human)
     else
-      flash.now['danger'] = t('defaults.message.not_updated', item: senryu.model_name.human)
+      flash.now['danger'] = t('defaults.message.not_updated', item: Senryu.model_name.human)
       render :edit, status: :unprocessable_entity
     end
   end
 
   def destroy
     @senryu.destroy!
-    redirect_to senryus_path, success: t('defaults.message.deleted', item: senryu.model_name.human), status: :see_other
+    redirect_to senryus_path, success: t('defaults.message.deleted', item: Senryu.model_name.human), status: :see_other
   end
 
   private
