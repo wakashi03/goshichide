@@ -1,0 +1,21 @@
+<% content_for(:title, t('.title')) %>
+<div class="container mx-auto pt-3">
+  <div class="flex justify-center">
+    <div class="w-full lg:w-10/12">
+      <form class="flex">
+        <input class="form-control flex-grow border border-r-0 rounded-l-lg py-2 px-4" placeholder="検索ワード" type="search" />
+        <input type="submit" value="検索" class="btn bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-r-lg" />
+      </form>
+    </div>
+  </div>
+
+  <div class="mt-6">
+    <div class="flex flex-wrap">
+      <% if @favorite_senryus.present? %>
+        <%= render @favorite_senryus %>
+      <% else %>
+        <p class="w-full text-center"><%= t('.no_result') %></p>
+      <% end %>
+    </div>
+  </div>
+</div>
