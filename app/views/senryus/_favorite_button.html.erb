@@ -1,0 +1,5 @@
+<% if current_user.favorite?(senryu) %>
+  <%= render 'unfavorite', { senryu: senryu } %>
+<% else %>
+  <%= render 'favorite', { senryu: senryu } %>
+<% end %>

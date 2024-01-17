@@ -3,6 +3,8 @@ class User < ApplicationRecord
 
   has_many :senryus, dependent: :destroy
   has_many :comments, dependent: :destroy
+  has_many :favorites, dependent: :destroy
+  has_many :favorite_senryus, through: :favorites, source: :senryu
 
   validates :password, length: { minimum: 3 }, if: -> { new_record? || changes[:crypted_password] }
   validates :password, confirmation: true, if: -> { new_record? || changes[:crypted_password] }
@@ -13,5 +15,17 @@ class User < ApplicationRecord
 
   def own?(object)
     id == object.user_id
+  end
+
+  def favorite(senryu)
+    favorite_senryus << senryu
+  end
+
+  def unfavorite(senryu)
+    favorite_senryus.destroy(senryu)
+  end
+
+  def favorite?(senryu)
+    favorite_senryus.include?(senryu)
   end
 end
