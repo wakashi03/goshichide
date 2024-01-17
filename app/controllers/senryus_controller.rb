@@ -42,6 +42,10 @@ class SenryusController < ApplicationController
     redirect_to senryus_path, success: t('defaults.message.deleted', item: Senryu.model_name.human), status: :see_other
   end
 
+  def favorites
+    @favorite_senryus = current_user.favorite_senryus.includes(:user).order(created_at: :desc)
+  end
+
   private
 
   def senryu_params
