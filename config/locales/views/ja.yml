@@ -40,8 +40,14 @@ ja:
       title: '川柳詳細'
     edit:
       title: '川柳編集'
-    bookmarks:
-      title: 'ブックマーク一覧'
+    favorites:
+      title: 'お気に入り一覧'
+      no_result: 'お気に入り中の川柳がありません。'
+  favorites:
+    create:
+      success: 'お気に入りに追加しました'
+    destroy:
+      success: 'お気に入りから削除しました'
   profiles:
     show:
       title: 'プロフィール'
