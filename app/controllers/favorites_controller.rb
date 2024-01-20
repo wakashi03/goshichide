@@ -1,13 +1,11 @@
 class FavoritesController < ApplicationController
   def create
-    senryu = Senryu.find(params[:senryu_id])
-    current_user.favorite(senryu)
-    redirect_back fallback_location: senryus_path, success: t('.success')
+    @senryu = Senryu.find(params[:senryu_id])
+    current_user.favorite(@senryu)
   end
 
   def destroy
-    senryu = current_user.favorites.find(params[:id]).senryu
-    current_user.unfavorite(senryu)
-    redirect_back fallback_location: senryus_path, success: t('.success'), status: :see_other
+    @senryu = current_user.favorites.find(params[:id]).senryu
+    current_user.unfavorite(@senryu)
   end
 end
