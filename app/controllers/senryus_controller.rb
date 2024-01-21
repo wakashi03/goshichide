@@ -46,6 +46,10 @@ class SenryusController < ApplicationController
     @favorite_senryus = current_user.favorite_senryus.includes(:user).order(created_at: :desc)
   end
 
+  def ranking
+    @senryus = Senryu.ranked_by_favorites.limit(5) 
+  end
+
   private
 
   def senryu_params

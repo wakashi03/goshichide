@@ -1,0 +1,4 @@
+<% content_for(:title, t('.title')) %>
+<% @senryus.each_with_index do |senryu, index| %>
+  <p><%= index + 1 %>: <%= render 'senryu', senryu: senryu, index: index %> (お気に入り数: <%= senryu.favorites_count %>)</p>
+<% end %>
