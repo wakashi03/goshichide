@@ -47,7 +47,7 @@ class SenryusController < ApplicationController
   end
 
   def ranking
-    @senryus = Senryu.ranked_by_favorites.limit(5) 
+    @senryus = Senryu.ranked_by_favorites.limit(5)
   end
 
   private
