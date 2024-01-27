@@ -51,6 +51,8 @@ gem 'pry-byebug'
 gem 'sorcery', '~> 0.16.5'
 
 gem 'rails-i18n', '~> 7.0', '>= 7.0.8'
+gem 'carrierwave'
+gem 'mini_magick'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
