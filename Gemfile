@@ -51,7 +51,7 @@ gem 'pry-byebug'
 gem 'sorcery', '~> 0.16.5'
 
 gem 'rails-i18n', '~> 7.0', '>= 7.0.8'
-gem 'carrierwave'
+gem 'carrierwave', '~> 2.0'
 gem 'mini_magick'
 
 group :development, :test do
