@@ -16,12 +16,12 @@
       </tr>
       <tr>
         <th class="border px-4 py-2 text-left text-gray-600"><%= t(User.human_attribute_name(:full_name)) %></th>
-        <td class="border px-4 py-2"><%= current_user.decorate.full_name %></td>
+        <td class="border px-4 py-2"><%= current_user.name %></td>
       </tr>
       <tr>
         <th class="border px-4 py-2 text-left text-gray-600"><%= t(User.human_attribute_name(:avatar)) %></th>
         <td class="border px-4 py-2">
-          <%= image_tag current_user.avatar.url, class: 'rounded-full', width: 50, height: 50 %>
+          <%= image_tag current_user.icon.url, class: 'rounded-full', width: 50, height: 50 %>
         </td>
       </tr>
     </table>
