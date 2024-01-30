@@ -1,0 +1,29 @@
+<% content_for(:title, t('.title')) %>
+<div class="max-w-4xl mx-auto pt-6">
+  <div class="flex flex-wrap -mx-4">
+    <div class="w-full md:w-4/5 px-4">
+      <h1 class="text-2xl font-bold mb-6"><%= t('.title') %></h1>
+    </div>
+    <div class="w-full md:w-1/5 px-4 flex justify-end">
+      <%= link_to t('defaults.edit'), edit_profile_path, class: 'inline-block bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded' %>
+    </div>
+  </div>
+  <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+    <table class="min-w-full">
+      <tr>
+        <th class="border px-4 py-2 text-left text-gray-600"><%= t(User.human_attribute_name(:email)) %></th>
+        <td class="border px-4 py-2"><%= current_user.email %></td>
+      </tr>
+      <tr>
+        <th class="border px-4 py-2 text-left text-gray-600"><%= t(User.human_attribute_name(:name)) %></th>
+        <td class="border px-4 py-2"><%= current_user.name %></td>
+      </tr>
+      <tr>
+        <th class="border px-4 py-2 text-left text-gray-600"><%= t(User.human_attribute_name(:icon)) %></th>
+        <td class="border px-4 py-2">
+          <%= image_tag current_user.icon.url, class: 'rounded-full', width: 50, height: 50 %>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>

@@ -45,11 +45,13 @@ gem "tzinfo-data", platforms: %i[windows jruby]
 gem "bootsnap", require: false
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
-# gem "image_processing", "~> 1.2"
+gem "image_processing", "~> 1.2"
 
 gem 'pry-byebug'
 gem 'sorcery', '~> 0.16.5'
 
+gem 'carrierwave', '~> 2.0'
+gem 'mini_magick'
 gem 'rails-i18n', '~> 7.0', '>= 7.0.8'
 
 group :development, :test do
