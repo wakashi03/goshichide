@@ -1,6 +1,7 @@
 class ProfilesController < ApplicationController
   before_action :set_user, only: %i[edit update]
-  
+
+  def show; end
   def edit; end
 
   def update
@@ -11,8 +12,6 @@ class ProfilesController < ApplicationController
       render :edit, status: :unprocessable_entity
     end
   end
-
-  def show; end
 
   private
 

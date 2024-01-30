@@ -50,9 +50,9 @@ gem "image_processing", "~> 1.2"
 gem 'pry-byebug'
 gem 'sorcery', '~> 0.16.5'
 
-gem 'rails-i18n', '~> 7.0', '>= 7.0.8'
 gem 'carrierwave', '~> 2.0'
 gem 'mini_magick'
+gem 'rails-i18n', '~> 7.0', '>= 7.0.8'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
