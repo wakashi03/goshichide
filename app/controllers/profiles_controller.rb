@@ -8,7 +8,7 @@ class ProfilesController < ApplicationController
       redirect_to profile_path, success: t('defaults.message.updated', item: User.model_name.human)
     else
       flash.now['danger'] = t('defaults.message.not_updated', item: User.model_name.human)
-      render :edit
+      render :edit, status: :unprocessable_entity
     end
   end
 
@@ -21,6 +21,6 @@ class ProfilesController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:email, :name, :avatar, :avatar_cache)
+    params.require(:user).permit(:email, :name, :icon, :icon_cache)
   end
 end

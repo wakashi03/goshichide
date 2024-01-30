@@ -15,11 +15,11 @@
         <td class="border px-4 py-2"><%= current_user.email %></td>
       </tr>
       <tr>
-        <th class="border px-4 py-2 text-left text-gray-600"><%= t(User.human_attribute_name(:full_name)) %></th>
+        <th class="border px-4 py-2 text-left text-gray-600"><%= t(User.human_attribute_name(:name)) %></th>
         <td class="border px-4 py-2"><%= current_user.name %></td>
       </tr>
       <tr>
-        <th class="border px-4 py-2 text-left text-gray-600"><%= t(User.human_attribute_name(:avatar)) %></th>
+        <th class="border px-4 py-2 text-left text-gray-600"><%= t(User.human_attribute_name(:icon)) %></th>
         <td class="border px-4 py-2">
           <%= image_tag current_user.icon.url, class: 'rounded-full', width: 50, height: 50 %>
         </td>
