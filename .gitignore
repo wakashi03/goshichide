@@ -8,6 +8,8 @@
 /.bundle
 
 # Ignore all environment files (except templates).
+.env
+/.env
 /.env*
 !/.env*.erb
 
@@ -34,6 +36,7 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+/config/certs/*
 
 /app/assets/builds/*
 !/app/assets/builds/.keep
@@ -42,3 +45,9 @@
 
 # Ignore installed gem files.
 /vendor/bundle
+
+config/settings.local.yml
+config/settings/*.local.yml
+config/environments/*.local.yml
+config/settings.yml
+config/settings/test.yml

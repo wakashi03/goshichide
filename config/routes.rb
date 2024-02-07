@@ -12,6 +12,10 @@ Rails.application.routes.draw do
   post 'login', to: 'user_sessions#create'
   delete 'logout', to: 'user_sessions#destroy'
 
+  post "oauth/callback" => "oauths#callback"
+  get "oauth/callback" => "oauths#callback"
+  get "oauth/:provider" => "oauths#oauth", :as => :auth_at_provider
+
   get 'senryus/ranking', to: 'senryus#ranking'
 
   resources :users, only: %i[new create]

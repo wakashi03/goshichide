@@ -49,6 +49,9 @@ gem "image_processing", "~> 1.2"
 
 gem 'pry-byebug'
 gem 'sorcery', '~> 0.16.5'
+gem 'omniauth-line'
+gem 'omniauth-rails_csrf_protection'
+gem 'config'
 
 gem 'carrierwave', '~> 2.0'
 gem 'mini_magick'
@@ -61,6 +64,7 @@ group :development, :test do
   gem 'rubocop', require: false
   gem 'rubocop-performance', require: false
   gem 'rubocop-rails', require: false
+  gem 'dotenv-rails'
 end
 
 group :development do
