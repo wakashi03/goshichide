@@ -47,7 +47,10 @@ class SenryusController < ApplicationController
   end
 
   def ranking
-    @senryus = Senryu.ranked_by_favorites.limit(5)
+    ranked_senryus = Senryu.ranked_by_favorites
+    @ranked_senryus = ranked_senryus.take_while do |rank, _senryu|
+      rank <= 3
+    end
   end
 
   private

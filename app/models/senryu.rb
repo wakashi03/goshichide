@@ -7,10 +7,12 @@ class Senryu < ApplicationRecord
   validates :nakashichi, presence: true, length: { maximum: 10 }
   validates :shimogo, presence: true, length: { maximum: 10 }
 
-  scope :ranked_by_favorites, lambda {
-    select('senryus.*, COUNT(favorites.id) AS favorites_count')
-      .joins(:favorites)
-      .group('senryus.id')
-      .order('favorites_count DESC')
-  }
+  def self.ranked_by_favorites
+    all.select { |senryu| senryu.favorites_count > 0 }
+       .group_by(&:favorites_count)
+       .sort_by { |favorites_count, _senryus| -favorites_count }
+       .flat_map.with_index(1) do |(_favorites_count, senryus), index|
+      senryus.map { |senryu| [index, senryu] }
+    end
+  end
 end
