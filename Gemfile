@@ -48,12 +48,13 @@ gem "bootsnap", require: false
 gem "image_processing", "~> 1.2"
 
 gem 'config'
+gem 'line-bot-api'
 gem 'omniauth-line'
 gem 'omniauth-rails_csrf_protection'
-gem 'line-bot-api'
-gem 'whenever', require: false
+gem 'pg_search'
 gem 'pry-byebug'
 gem 'sorcery', '~> 0.16.5'
+gem 'whenever', require: false
 
 gem 'carrierwave', '~> 2.0'
 gem 'mini_magick'
