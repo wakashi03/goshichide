@@ -50,6 +50,8 @@ gem "image_processing", "~> 1.2"
 gem 'config'
 gem 'omniauth-line'
 gem 'omniauth-rails_csrf_protection'
+gem 'line-bot-api'
+gem 'whenever', require: false
 gem 'pry-byebug'
 gem 'sorcery', '~> 0.16.5'
 
