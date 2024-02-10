@@ -11,9 +11,9 @@
   <p class="text-right text-sm text-gray-500 mt-4">
     <%= senryu.user.name %>
   </p>
-  <% if current_user.own?(senryu) %>
+  <% if current_user&.own?(senryu) %>
     <%= render 'crud_menus', senryu: senryu %>
-  <% else %>
+  <% elsif current_user %>
     <%= render 'favorite_button', senryu: senryu  %>
   <% end %>
 </div>
