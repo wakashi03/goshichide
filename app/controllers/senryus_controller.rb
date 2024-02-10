@@ -3,7 +3,11 @@ class SenryusController < ApplicationController
   before_action :set_senryu, only: %i[edit update destroy]
 
   def index
-    @senryus = Senryu.includes(:user).order(created_at: :desc)
+    @senryus = if params[:search].present?
+                 Senryu.includes(:user).search_by_all_parts(params[:search]).order(created_at: :desc)
+               else
+                 Senryu.includes(:user).order(created_at: :desc)
+               end
   end
 
   def show
@@ -38,8 +42,12 @@ class SenryusController < ApplicationController
   end
 
   def destroy
-    @senryu.destroy!
-    redirect_to senryus_path, success: t('defaults.message.deleted', item: Senryu.model_name.human), status: :see_other
+    if @senryu.destroy
+      redirect_to senryus_path, success: t('defaults.message.deleted', item: Senryu.model_name.human),
+                                status: :see_other
+    else
+      redirect_to @senryu, danger: t('defaults.message.not_deleted', item: Senryu.model_name.human), status: :see_other
+    end
   end
 
   def favorites

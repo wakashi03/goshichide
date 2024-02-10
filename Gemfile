@@ -51,6 +51,7 @@ gem 'config'
 gem 'line-bot-api'
 gem 'omniauth-line'
 gem 'omniauth-rails_csrf_protection'
+gem 'pg_search'
 gem 'pry-byebug'
 gem 'sorcery', '~> 0.16.5'
 gem 'whenever', require: false

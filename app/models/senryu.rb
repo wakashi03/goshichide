@@ -6,4 +6,11 @@ class Senryu < ApplicationRecord
   validates :kamigo, presence: true, length: { maximum: 10 }
   validates :nakashichi, presence: true, length: { maximum: 10 }
   validates :shimogo, presence: true, length: { maximum: 10 }
+
+  include PgSearch::Model
+  pg_search_scope :search_by_all_parts,
+                  against: %i[kamigo nakashichi shimogo],
+                  using: {
+                    tsearch: { prefix: true }
+                  }
 end
