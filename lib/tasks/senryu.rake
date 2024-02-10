@@ -8,8 +8,8 @@ namespace :senryu do
 
     # LINE Botの設定を初期化
     client = Line::Bot::Client.new do |config|
-      config.channel_secret = ENV['LINE_CHANNEL_SECRET']
-      config.channel_token = ENV['LINE_CHANNEL_TOKEN']
+      config.channel_secret = ENV.fetch('LINE_CHANNEL_SECRET', nil)
+      config.channel_token = ENV.fetch('LINE_CHANNEL_TOKEN', nil)
     end
 
     # "line"プロバイダーで認証された全ユーザーに対してメッセージを送信
@@ -22,7 +22,7 @@ namespace :senryu do
 
   # ランキング情報をLINEで送信可能なテキスト形式に整形するメソッド
   def format_message(senryus)
-    senryus.each_with_index.map do |(index, senryu), i|
+    senryus.each_with_index.map do |(_index, senryu), i|
       "#{i + 1}位: #{senryu.kamigo} #{senryu.nakashichi} #{senryu.shimogo} (お気に入り数: #{senryu.favorites_count})"
     end.join("\n")
   end
