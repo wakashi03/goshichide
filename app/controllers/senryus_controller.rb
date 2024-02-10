@@ -58,6 +58,10 @@ class SenryusController < ApplicationController
     @ranked_senryus = SenryuRankingService.ranked_by_favorites
   end
 
+  def user_senryus
+    @user_senryus = current_user.senryus.includes(:user).order(created_at: :desc)
+  end
+
   private
 
   def senryu_params

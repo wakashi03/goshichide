@@ -45,6 +45,8 @@ ja:
       no_result: 'お気に入り中の川柳がありません。'
     ranking:
       title: 'ランキング'
+    user_senryus:
+      title: 'マイ川柳'
   favorites:
     create:
       success: 'お気に入りに追加しました'

@@ -26,6 +26,7 @@ Rails.application.routes.draw do
     collection do
       get :favorites
       get 'ranking'
+      get :user_senryus
     end
   end
   resources :favorites, only: %i[create destroy]
