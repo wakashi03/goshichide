@@ -16,6 +16,8 @@ Rails.application.routes.draw do
   get "oauth/callback" => "oauths#callback"
   get "oauth/:provider" => "oauths#oauth", :as => :auth_at_provider
 
+  # post '/callback', to: 'linebot#callback'
+
   get 'senryus/ranking', to: 'senryus#ranking'
 
   resources :users, only: %i[new create]
@@ -23,6 +25,7 @@ Rails.application.routes.draw do
     resources :comments, only: %i[create], shallow: true
     collection do
       get :favorites
+      get 'ranking'
     end
   end
   resources :favorites, only: %i[create destroy]
