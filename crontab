@@ -1,0 +1,1 @@
+25 19 * * * bundle exec rake senryu:send_ranking
