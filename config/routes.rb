@@ -24,7 +24,7 @@ Rails.application.routes.draw do
 
   resources :users, only: %i[new create]
   resources :senryus do
-    resources :comments, only: %i[create], shallow: true
+    resources :comments, only: %i[create destroy], shallow: true
     collection do
       get :favorites
       get 'ranking'
