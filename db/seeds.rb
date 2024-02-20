@@ -1,3 +1,4 @@
+require 'faker'
 # This file should ensure the existence of records required to run the application in every environment (production,
 # development, test). The code here should be idempotent so that it can be executed at any point in every environment.
 # The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
@@ -24,3 +25,21 @@ end
       shimogo: "下五#{index}"
   )
 end
+
+# 10.times do
+#   Comment.create!(
+#     user: User.offset(rand(User.count)).first,
+#     senryu: Senryu.offset(rand(Senryu.count)).first,
+#     content: Faker::Lorem.sentence(word_count: 5)
+#   )
+# end
+
+# 10.times do
+#   user = User.offset(rand(User.count)).first
+#   senryu = Senryu.offset(rand(Senryu.count)).first
+  
+#   # 同じ user_id と senryu_id の組み合わせが既に存在するかチェック
+#   unless Favorite.exists?(user_id: user.id, senryu_id: senryu.id)
+#     Favorite.create!(user: user, senryu: senryu)
+#   end
+# end
