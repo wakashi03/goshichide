@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   get 'login', to: 'user_sessions#new'
   post 'login', to: 'user_sessions#create'
   delete 'logout', to: 'user_sessions#destroy'
+  get 'privacy_policy', to: 'tops#privacy_policy'
+  get 'terms_of_service', to: 'tops#terms_of_service'
 
   post "oauth/callback" => "oauths#callback"
   get "oauth/callback" => "oauths#callback"
