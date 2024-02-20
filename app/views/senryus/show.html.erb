@@ -7,13 +7,9 @@
         <div class="card-body p-6">
           <div class='flex flex-wrap'>
             <div class='w-full md:w-9/12'>
-              <%= render 'crud_menus', senryu: @senryu if current_user.own?(@senryu) %>
-              <%= @senryu.kamigo %>
-              <%= @senryu.nakashichi %>
-              <%= @senryu.shimogo %>
-              <div class="mt-4">
+              <%= render 'senryu', senryu: @senryu %>
+              <div class="mt-4 text-right">
                 <ul class="list-none">
-                  <li class="inline mr-2">by <%= @senryu.user.name %></li>
                   <li class="inline"><%= l @senryu.created_at, format: :long  %></li>
                 </ul>
               </div>

@@ -23,14 +23,14 @@ class OauthsController < ApplicationController
   end
 
   def successful_login(provider)
-    redirect_to root_path, notice: "Logged in from #{provider.titleize}!"
+    redirect_to root_path, notice: I18n.t('oauth.login_success', provider: provider.titleize)
   end
 
   def attempt_signup_and_login(provider)
     signup_and_login(provider)
-    redirect_to root_path, notice: "#{provider.titleize}アカウントでログインしました"
+    redirect_to root_path, notice: I18n.t('oauth.login_via_provider', provider: provider.titleize)
   rescue StandardError
-    redirect_to root_path, alert: "#{provider.titleize}アカウントでのログインに失敗しました"
+    redirect_to root_path, alert: I18n.t('oauth.login_failure', provider: provider.titleize)
   end
 
   def signup_and_login(provider)

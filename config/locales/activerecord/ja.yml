@@ -12,8 +12,8 @@ ja:
         name: '名前'
         icon: 'アイコン'
       senryu:
-        kamigo: '上五'
-        nakashichi: '中七'
-        shimogo: '下五'
+        kamigo: '上の句'
+        nakashichi: '中の句'
+        shimogo: '下の句'
       comment:
         content: 'コメント'

@@ -1,10 +1,88 @@
-<div class="hero min-h-screen" style="background-image: url(https://daisyui.com/images/stock/photo-1507358522600-9f71e620c44e.jpg);">
-  <div class="hero-overlay bg-opacity-60"></div>
-  <div class="hero-content text-center text-neutral-content">
-    <div class="max-w-md">
-      <h1 class="mb-5 text-5xl font-bold">Hello there</h1>
-      <p class="mb-5">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
-      <button class="btn btn-primary">Get Started</button>
-    </div>
+<style>
+  .gradient-border {
+    position: relative;
+    max-width: 520px;
+    margin: 2em auto 2.5em;
+    padding: 1.5em;
+    border: 12px solid transparent;
+    border-left-width: 48px;
+    background: linear-gradient(#fff, #fff), linear-gradient(#b8c5db, #b8c5db);
+    background-clip: padding-box, border-box;
+    background-origin: border-box;
+  }
+
+  .gradient-border:before,
+  .gradient-border:after {
+    display: inline-block;
+    position: absolute;
+    content: "";
+  }
+  .gradient-border:before {
+    left: -36px;
+    top: -32px;
+    width: 24px;
+    height: calc(100% + 64px);
+    background: #4d4d4d;
+  }
+  .gradient-border:after {
+    left: -48px;
+    top: -20px;
+    width: 48px;
+    height: calc(100% + 40px);
+    background: #4973b8;
+  }
+</style>
+
+<main class="container mx-auto px-6 mt-10">
+  <div class="text-center mb-6">
+    <%= image_tag 'goshichide.png', class: "h-56 w-auto mx-auto", alt: "アプリのロゴ" %>
   </div>
-</div>
+  
+  <section class="py-5">
+    <h2 class="text-2xl font-bold mb-4 text-center">プログラミング学習のアウトプットのハードルを下げよう</p>
+  </section>
+
+  <div class="gradient-border">
+    <section class="hero py-10 px-5">
+      <p class="text-xl mx-6 mb-4">ごしちでは、プログラミング学習のアウトプットを川柳形式でさくっと楽しく共有できるサービスです。</h2>
+    </section>
+  </div>
+
+  <section class="examples p-10">
+    <h2 class="text-2xl font-bold mb-4 text-center">さっそく川柳を見てみる！</h2>
+    <div class="text-center">
+      <%= link_to t('senryus.index.title'), senryus_path, class: "btn btn-lg px-8 py-4 text-lg inline-block" %>
+    </div>
+  </section>
+
+  <div class="text-center mb-4">
+    <h2 class="text-2xl font-bold">ごしちでの使い方</h2>
+  </div>
+  <section class="guide bg-gray-200 p-10 rounded-lg max-w-lg mx-auto">
+    <div class="flex flex-col justify-around text-left">
+      <div class="mb-4">
+        <h3 class="font-bold">1. 登録する</h3>
+        <p>LINEアカウントでログインすると毎日定時にランキングが届きます</p>
+      </div>
+      <div class="mb-4">
+        <h3 class="font-bold">2. 川柳を作る</h3>
+        <p>プログラミング学習での学びを5-7-5のリズムで表現します</p>
+      </div>
+      <div class="mb-4">
+        <h3 class="font-bold">3. 共有してフィードバックをもらう</h3>
+        <p>他のユーザーと共有し合いましょう</p>
+      </div>
+      <div class="mb-4">
+        <h3 class="font-bold">4. ランキングを見に行く</h3>
+        <p>お気に入り数に応じたランキングを確認できます</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="examples p-10">
+    <h2 class="text-2xl font-bold mb-4 text-center">川柳を投稿してみましょう</h2>
+    <div class="text-center">
+      <%= link_to t('senryus.new.title'), new_senryu_path, class: "btn btn-lg px-8 py-4 text-lg inline-block" %>
+    </div>
+  </section>
+</main>

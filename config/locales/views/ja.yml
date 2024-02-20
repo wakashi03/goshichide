@@ -15,7 +15,7 @@ ja:
       delete_confirm: '削除しますか？'
   users:
     new:
-      title: 'ユーザー登録'
+      title: '新規登録'
       to_login_page: 'ログインページへ'
     create:
       success: 'ユーザー登録が完了しました'
@@ -47,6 +47,8 @@ ja:
       title: 'ランキング'
     user_senryus:
       title: 'マイ川柳'
+    form:
+      submit: "投稿する"
   favorites:
     create:
       success: 'お気に入りに追加しました'
@@ -57,4 +59,7 @@ ja:
       title: 'プロフィール'
     edit:
       title: 'プロフィール編集'
-  
+  oauth:
+    login_success: "%{provider}からログインしました！"
+    login_failure: "%{provider}アカウントでのログインに失敗しました。"
+    login_via_provider: "%{provider}アカウントでログインしました。"
