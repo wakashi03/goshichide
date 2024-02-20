@@ -1,6 +1,5 @@
 <div class="mx-auto mb-6 lg:w-2/3">
-  <%= form_with model: comment, url: [senryu, comment], local: true do |f| %>
-    <%= render 'shared/error_messages', object: f.object %>
+  <%= form_with model: comment, url: [senryu, comment], id: 'new_comment' do |f| %>
     <label for="content" class="block text-sm font-medium text-gray-700">
       <%= f.label :content %>
     </label>
