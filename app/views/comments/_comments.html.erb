@@ -1,7 +1,5 @@
-<div class="flex justify-center my-6">
-  <div class="w-full lg:w-2/3">
-    <table id="js-table-comment" class="min-w-full divide-y divide-gray-200">
-      <%= render @comments %>
-    </table>
-  </div>
-</div>
+<%= turbo_frame_tag "comments" do %>
+  <% @comments.each do |comment| %>
+    <%= render "comments/comment", comment: comment %>
+  <% end %>
+<% end %>

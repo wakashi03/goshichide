@@ -1,29 +1,23 @@
-<tr id="comment-<%= comment.id %>" class="border-b">
-  <td class="p-2">
-    <div class="flex items-center space-x-3">
-      <!-- ユーザーアイコンを表示 -->
-      <%= image_tag comment.user.icon_url, alt: "user icon", class: "rounded-full w-8 h-8 mr-2" %>
-      <h3 class="text-sm font-bold"><%= comment.user.name %></h3>
-    </div>
-    <div id="js-comment-<%= comment.id %>" class="whitespace-pre-wrap">
-      <%= simple_format(comment.content) %>
-    </div>
-    <div id="js-textarea-comment-box-<%= comment.id %>" class="hidden">
-      <textarea id="js-textarea-comment-<%= comment.id %>" class="form-textarea mt-1 block w-full border-gray-300 rounded-md shadow-sm mb-1"><%= comment.content %></textarea>
-      <button class="btn btn-light js-button-edit-comment-cancel bg-gray-100 hover:bg-gray-200 text-gray-800 p-2 rounded" data-comment-id="<%= comment.id %>">キャンセル</button>
-      <button class="btn btn-success js-button-comment-update bg-green-500 hover:bg-green-600 text-white p-2 rounded" data-comment-id="<%= comment.id %>">更新</button>
-    </div>
-  </td>
+<%= turbo_frame_tag dom_id(comment) do %>
+  <table class="border-separate" style="border-spacing: 0; width: 100%;">
+    <tr id="comment-<%= comment.id %>" class="border-2 border-gray-600 bg-white hover:bg-gray-50" style="background-color: #f0f0f0;">
+      <td class="py-4 px-6">
+        <div class="flex items-center space-x-4">
+          <%= image_tag comment.user.icon_url, alt: "user icon", class: "rounded-full w-10 h-10 shadow-sm" %>
+          <h3 class="text-sm font-semibold text-gray-900"><%= comment.user.name %></h3>
+        </div>
+        <div id="js-comment-<%= comment.id %>" class="mt-2 whitespace-pre-wrap text-sm text-gray-700">
+          <%= simple_format(comment.content) %>
+        </div>
+      </td>
 
-  <% if current_user.own?(comment) %>
-    <td class="action">
-      <div class="flex justify-end">
-        <li class="mr-2">
-          <%= link_to comment_path(comment), class: 'js-delete-comment-button', data: { turbo_method: :delete, confirm: t('defaults.message.delete_confirm') }, remote: true do %>
-            <svg xmlns="http://www.w3.org/2000/svg" height="16" width="14" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M135.2 17.7L128 32H32C14.3 32 0 46.3 0 64S14.3 96 32 96H416c17.7 0 32-14.3 32-32s-14.3-32-32-32H320l-7.2-14.3C307.4 6.8 296.3 0 284.2 0H163.8c-12.1 0-23.2 6.8-28.6 17.7zM416 128H32L53.2 467c1.6 25.3 22.6 45 47.9 45H346.9c25.3 0 46.3-19.7 47.9-45L416 128z"/></svg>
-          <% end %>
-        </li>
-      </div>
-    </td>
-  <% end %>
-</tr>
+      <% if current_user.own?(comment) %>
+        <td class="py-4 px-6">
+          <div class="flex justify-end">
+            <%= link_to raw('<svg xmlns="http://www.w3.org/2000/svg" height="16" width="14" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M135.2 17.7L128 32H32C14.3 32 0 46.3 0 64S14.3 96 32 96H416c17.7 0 32-14.3 32-32s-14.3-32-32-32H320l-7.2-14.3C307.4 6.8 296.3 0 284.2 0H163.8c-12.1 0-23.2 6.8-28.6 17.7zM416 128H32L53.2 467c1.6 25.3 22.6 45 47.9 45H346.9c25.3 0 46.3-19.7 47.9-45L416 128z"/></svg>'), comment_path(comment), method: :delete, data: { turbo_confirm: t('defaults.message.delete_confirm'), turbo_method: :delete }, class: "inline-flex items-center p-1 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500" %>
+          </div>
+        </td>
+      <% end %>
+    </tr>
+  </table>
+<% end %>
