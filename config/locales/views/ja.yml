@@ -58,7 +58,7 @@ ja:
     show:
       title: 'プロフィール'
     edit:
-      title: 'プロフィール編集'
+      title: '編集'
   oauth:
     login_success: "%{provider}からログインしました！"
     login_failure: "%{provider}アカウントでのログインに失敗しました。"
