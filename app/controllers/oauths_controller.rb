@@ -24,7 +24,7 @@ class OauthsController < ApplicationController
 
   def successful_login(provider)
     redirect_to root_path, notice: I18n.t('oauth.login_success', provider: provider.titleize)
-  end  
+  end
 
   def attempt_signup_and_login(provider)
     signup_and_login(provider)
