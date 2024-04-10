@@ -55,7 +55,7 @@ class SenryusController < ApplicationController
   end
 
   def ranking
-    @ranked_senryus = SenryuRankingService.ranked_by_favorites
+    @ranked_senryus = Senryu.ranked_by_favorites
   end
 
   def user_senryus

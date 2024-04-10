@@ -1,7 +1,7 @@
 namespace :senryu do
   desc "Send daily ranking via LINE"
   task send_ranking: :environment do
-    senryus = SenryuRankingService.ranked_by_favorites
+    senryus = Senryu.ranked_by_favorites
     message = format_message(senryus)
 
     client = Line::Bot::Client.new do |config|
