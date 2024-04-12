@@ -17,7 +17,7 @@ namespace :senryu do
 end
 
 def format_message(senryus)
-  senryus.each_with_index.map do |(rank, senryu), i|
+  senryus.each_with_index.map do |(rank, senryu), _i|
     "#{rank}位: #{senryu.kamigo} #{senryu.nakashichi} #{senryu.shimogo} (お気に入り数: #{senryu.favorites_count})"
   end.join("\n")
 end

@@ -19,7 +19,7 @@ class Senryu < ApplicationRecord
     all_senryus = where('favorites_count > 0').order(favorites_count: :desc)
     rank = 0
     ranked_senryus = all_senryus.chunk { |senryu| senryu.favorites_count }
-                                .flat_map do |favorites_count, senryus|
+                                .flat_map do |_favorites_count, senryus|
                                   rank += 1
                                   senryus.map { |senryu| [rank, senryu] }
                                 end
