@@ -1,7 +1,7 @@
 namespace :senryu do
   desc "Send daily ranking via LINE"
   task send_ranking: :environment do
-    senryus = SenryuRankingService.ranked_by_favorites
+    senryus = Senryu.ranked_by_favorites
     message = format_message(senryus)
 
     client = Line::Bot::Client.new do |config|
@@ -17,7 +17,7 @@ namespace :senryu do
 end
 
 def format_message(senryus)
-  senryus.each_with_index.map do |(rank, senryu), i|
+  senryus.each_with_index.map do |(rank, senryu), _i|
     "#{rank}位: #{senryu.kamigo} #{senryu.nakashichi} #{senryu.shimogo} (お気に入り数: #{senryu.favorites_count})"
   end.join("\n")
 end
