@@ -1,24 +1,18 @@
 <% content_for(:title, t('.title')) %>
 <div class="container mx-auto pt-5">
-  <div class="mb-3 flex flex-wrap">
     <div class="w-full lg:w-8/12 lg:mx-auto">
       <h1 class="text-2xl font-bold"><%= t('.title') %></h1>
       <article class="card bg-white shadow-xl">
-        <div class="card-body p-6">
           <div class='flex flex-wrap justify-center'>
-            <div class='w-full md:w-9/12'>
               <%= render 'senryu', senryu: @senryu %>
               <div class="mt-4 text-right">
                 <ul class="list-none">
                   <li class="inline"><%= l @senryu.created_at, format: :long  %></li>
                 </ul>
               </div>
-            </div>
           </div>
-        </div>
       </article>
     </div>
-  </div>
 
   <%= render 'comments/form', { senryu: @senryu, comment: @comment } %>
 
